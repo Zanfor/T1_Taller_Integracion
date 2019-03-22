@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset=utf-8>
+  <title> index </title>  
+</head>
+<body>
+  <h1> Películas </h1>
+  {% for p in peliculas %}
+  <pelicula>
+    <h4> Título : <a href="pelis/{{p[5]}}"> {{p[0]}} </a> </h4>
+    <h4> Año de lanzamiento : {{p[1]}} </h4>
+    <h4> Dirigida por : {{p[2]}} </h4>
+    <h4> Producida por : {{p[3]}} </h4>
+    <h4> Número : {{p[4]}} </h4>
+   </pelicula>
+    <h4> ___________________________________________________________________________________ </h4>
+  {% endfor %}
+</body>
+</html>

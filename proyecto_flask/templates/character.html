@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset=utf-8>
+  <title> Personaje </title>  
+</head>
+<body>
+  <personaje>
+      <h1>  {{p[0]}} </h1>
+          <h4> Estatura : {{p[1]}} cms </h4>
+          <h4> Peso : {{p[2]}} kgs </h4>
+          <h4> Color de pelo : {{p[3]}} </h4>
+          <h4> Color de piel : {{p[4]}} </h4>
+          <h4> Color de ojos : {{p[5]}} </h4>
+          <h4> Año de nacimiento : {{p[6]}} </h4>
+          <h4> Género : {{p[7]}} </h4>
+          <h4> Planeta de origen: <a href="/plan/{{p[8][1]}}"> {{p[8][0]}} </a> </h4>
+          <h4> Películas en que aparece : </h4>
+
+            {%for pel in p[9] : %}
+              <h6> &nbsp &nbsp &nbsp &nbsp <a href="/pelis/{{pel[1]}}"> {{pel[0]}} </a> </h6>
+            {% endfor %}
+
+          <h4> Naves que maneja : </h4>
+          
+          {%if p[10] == [] : %}
+            <h6> &nbsp &nbsp &nbsp &nbsp Ninguna </h6>
+          {% endif %}
+          
+          {%if p[10] != [] : %}
+            {%for nav in p[10] : %}
+              <h6> &nbsp &nbsp &nbsp &nbsp <a href="/naves/{{nav[1]}}"> {{nav[0]}} </a> </h6>
+            {% endfor %}
+          {% endif %}
+
+   </personaje>
+</body>
+</html>

@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset=utf-8>
+  <title> Peli </title>  
+</head>
+<body>
+  <pelicula>
+      <h1> Star Wars:  {{p[0]}} </h1>
+      <h2> {{crawl}}</h2>
+    <h4> Estreno : {{p[1]}} </h4>
+    <h4> Dirigida por : {{p[2]}} </h4>
+    <h4> Producida por : {{p[3]}} </h4>
+    <h4> Número : {{p[4]}} </h4>
+    <h4> Personajes : </h4>
+    {% for per in p[5] : %}
+        <h6> &nbsp &nbsp &nbsp &nbsp <a href="/chars/{{per[1]}}"> {{per[0]}} </a> </h6>
+    {% endfor %}
+
+    <h4> Planetas : </h4>
+    {% for pla in p[6] : %}
+        <h6> &nbsp &nbsp &nbsp &nbsp <a href="/plan/{{pla[1]}}"> {{pla[0]}} </a> </h6>
+    {% endfor %}
+
+    <h4> Naves : </h4>
+    {% for nav in p[7] : %}
+        <h6> &nbsp &nbsp &nbsp &nbsp <a href="/naves/{{nav[1]}}"> {{nav[0]}} </a> </h6>
+    {% endfor %}
+   </pelicula>
+</body>
+</html>
