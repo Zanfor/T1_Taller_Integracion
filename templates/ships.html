@@ -2,9 +2,13 @@
 <html lang="es">
 <head>
   <meta charset=utf-8>
-  <title> Personaje </title>  
+  <title> Nave </title>  
 </head> 
-<body>      
+<body>    
+ {% from "_macro.html" import render_field %}
+  <form name="formulario" id="o" method="POST"> {{render_field(form.criteria)}} 
+    <button type="submit" class="btn btn-default">Enviar</button>
+   </form>  
   <nave>   
 
       <h1>  Nave {{n[0]}} </h1>

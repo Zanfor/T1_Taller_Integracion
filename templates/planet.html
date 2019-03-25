@@ -2,9 +2,13 @@
 <html lang="es">
 <head>
   <meta charset=utf-8>
-  <title> Personaje </title>  
+  <title> Planeta </title>  
 </head>
 <body>      
+   {% from "_macro.html" import render_field %}
+  <form name="formulario" id="o" method="POST"> {{render_field(form.criteria)}} 
+    <button type="submit" class="btn btn-default">Enviar</button>
+   </form>
   <personaje>
       <h1>  Planeta {{p[0]}} </h1>
           <h4> Período rotación : {{p[1]}} </h4>

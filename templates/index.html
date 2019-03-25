@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -6,6 +5,10 @@
   <title> index </title>  
 </head>
 <body>
+  {% from "_macro.html" import render_field %}
+  <form name="formulario" id="o" method="POST"> {{render_field(form.criteria)}} 
+    <button type="submit" class="btn btn-default">Enviar</button>
+   </form>
   <h1> Películas </h1>
   {% for p in peliculas %}
   <pelicula>

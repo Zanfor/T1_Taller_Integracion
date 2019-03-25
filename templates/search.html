@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset=utf-8>
+  <title> search result </title>  
+</head>
+<body>
+  {% from "_macro.html" import render_field %}
+  <form name="formulario" id="o" method="POST"> {{render_field(form.criteria)}} 
+    <button type="submit" class="btn btn-default">Enviar</button>
+   </form>
+  <h1> Películas </h1>
+  {% for p in peliculas %}
+  <pelicula>
+    <h4> Título : <a href="/pelis/{{p[5]}}"> {{p[0]}} </a> </h4>
+   </pelicula>
+    <h4> ___________________________________________________________________________________ </h4>
+  {% endfor %}
+    <h1> Personajes </h1>
+  {% for c in personajes %}
+  <personaje>
+    <h4> Nombre : <a href="/chars/{{c[11][1]}}"> {{c[11][0]}} </a> </h4>
+   </personaje>
+    <h4> ___________________________________________________________________________________ </h4>
+  {% endfor %}
+    <h1> Naves </h1>
+  {% for n in naves %}
+  <nave>
+    <h4> Nombre : <a href="/naves/{{n[15][1]}}"> {{n[15][0]}} </a> </h4>
+   </nave>
+    <h4> ___________________________________________________________________________________ </h4>
+  {% endfor %}
+    <h1> Planetas </h1>
+  {% for pl in planetas %}
+  <planeta>
+    <h4> Nombre : <a href="/plan/{{pl[11][1]}}"> {{pl[11][0]}} </a> </h4>
+   </planeta>
+    <h4> ___________________________________________________________________________________ </h4>
+  {% endfor %}
+</body>
+</html>

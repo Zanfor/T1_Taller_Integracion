@@ -6,6 +6,10 @@
   <title> Peli </title>  
 </head>
 <body>
+   {% from "_macro.html" import render_field %}
+  <form name="formulario" id="o" method="POST"> {{render_field(form.criteria)}} 
+    <button type="submit" class="btn btn-default">Enviar</button>
+   </form>
   <pelicula>
       <h1> Star Wars:  {{p[0]}} </h1>
       <h2> {{crawl}}</h2>
